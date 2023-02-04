@@ -1,4 +1,5 @@
-<form>
+<!--monitoreamos el evento submit y colocamos una refrencia local-->
+<form (ngSubmit)="f.form.valid && agregarValor()" #f="ngForm">
   <div class="agregar">
     <div class="agregar_contenedor">
       <select [ngClass]="{redfocus: tipo === 'egresoOperacion'}" (change)="tipoOperacion($event)" class="agregar_tipo">
@@ -11,16 +12,16 @@
         class="agregar_descripcion"
         placeholder="Agregar Descripción"
         name="descripcionInput"
-        [(ngModel)]="descripcionInput"
+        [(ngModel)]="descripcionInput" required
       />
       <input [ngClass]="{redfocus: tipo === 'egresoOperacion'}"
       type="number" 
       class="agregar_valor" 
       placeholder="Valor" 
       name="valorInput"
-      [(ngModel)]="valorInput"
+      [(ngModel)]="valorInput" required
       />
-      <button class="agregar_btn" type="submit" (click)="agregarValor()">
+      <button class="agregar_btn" type="submit">
         <i  [ngClass]="{red: tipo === 'egresoOperacion'}" class="ion-ios-checkmark-outline"></i>
       </button>
     </div>
