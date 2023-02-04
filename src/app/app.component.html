@@ -1,0 +1,22 @@
+<!--componente de cabecero-->
+<app-cabecero
+[presupuestoTotal]="getPresupuestoTotal()"
+[ingresoTotal]="getIngresoTotal()"
+[egresoTotal]="getEgresoTotal()"
+[porcentaje]="getPorcentajeTotal()"
+>
+<!--pasamos la informacion para el componente cabecero-componente-hijo-->
+</app-cabecero>
+<!--componente de egreso-->
+<app-formulario></app-formulario>
+
+<div class="contenedor limpiarEstilos">
+  <!-- componente de ingreso -->
+  <app-ingreso></app-ingreso>
+  <!-- componente de egreso -->
+  <app-egreso
+  [ingresoTotal]="getIngresoTotal()"
+  >
+  <!--pasamos la informacion para el componente cabecero-componente-hijo-->
+  </app-egreso>
+</div>

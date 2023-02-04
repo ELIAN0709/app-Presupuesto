@@ -1,0 +1,16 @@
+<div class="ingreso">
+  <h2 class="ingreso_titulo">Ingresos</h2>
+  <!-- recorremos el array que es ingresos esta definido en ingresocomponent.ts-->
+  <div *ngFor="let ingreso of ingresos" class="elemento limpiarEstilos">
+    <!-- accedemos a los valores y descripcciones usando interpolacion-->
+    <div class="elemento_descripcion">{{ ingreso.descripcion }}</div>
+    <div class="right limpiarEstilos">
+      <div class="elemento_valor">+{{ ingreso.valor | currency:'USD':'$':'1.2-2' }}</div>
+      <div class="elemento_eliminar">
+        <button class="elemento_eliminar--btn">
+          <i class="ion-ios-close-outline" (click)="eliminarRegistro(ingre)"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
